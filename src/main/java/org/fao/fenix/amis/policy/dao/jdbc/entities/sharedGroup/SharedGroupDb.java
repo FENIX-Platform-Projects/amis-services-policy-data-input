@@ -1,4 +1,4 @@
-package org.fao.fenix.amis.policy.dao.jdbc.entities.shared;
+package org.fao.fenix.amis.policy.dao.jdbc.entities.sharedGroup;
 
 import org.fao.fenix.amis.policy.dao.Dao;
 import org.fao.fenix.amis.policy.dto.search.SharedGroupSearch;

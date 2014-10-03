@@ -1,8 +1,5 @@
 package org.fao.fenix.amis.policy.dto.full;
 
-/**
- * Created by fabrizio on 5/5/14.
- */
 public class Cpl {
 
 

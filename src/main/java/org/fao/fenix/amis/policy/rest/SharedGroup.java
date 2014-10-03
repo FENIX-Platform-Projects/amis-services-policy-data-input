@@ -1,6 +1,6 @@
 package org.fao.fenix.amis.policy.rest;
 
-import org.fao.fenix.amis.policy.dao.jdbc.entities.shared.SharedGroupDb;
+import org.fao.fenix.amis.policy.dao.jdbc.entities.sharedGroup.SharedGroupDb;
 import org.fao.fenix.amis.policy.dto.search.SharedGroupSearch;
 
 import javax.inject.Inject;
@@ -44,6 +44,7 @@ public class SharedGroup {
     }
 
     @POST
+    @Path("/search")
     public List<org.fao.fenix.amis.policy.dto.full.SharedGroup> getSharedGroups(SharedGroupSearch searchSharedGroupBean) {
         return dao.search(searchSharedGroupBean);
     }

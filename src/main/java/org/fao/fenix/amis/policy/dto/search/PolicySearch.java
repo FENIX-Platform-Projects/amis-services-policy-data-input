@@ -2,9 +2,6 @@ package org.fao.fenix.amis.policy.dto.search;
 
 import java.util.Date;
 
-/**
- * Created by fabrizio on 5/8/14.
- */
 public class PolicySearch {
 
     private Date startDate;

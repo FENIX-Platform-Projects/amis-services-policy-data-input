@@ -1,6 +1,6 @@
 package org.fao.fenix.amis.policy.dao.jdbc;
 
-import org.fao.fenix.amis.policy.dao.jdbc.entities.shared.SharedGroupDb;
+import org.fao.fenix.amis.policy.dao.jdbc.entities.sharedGroup.SharedGroupDb;
 import org.fao.fenix.amis.policy.dto.full.SharedGroup;
 
 import java.sql.SQLException;

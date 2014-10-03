@@ -1,8 +1,5 @@
 package org.fao.fenix.amis.policy.dto.search;
 
-/**
- * Created by fabrizio on 5/8/14.
- */
 public class CplSearch {
 
     private int countryCode;
