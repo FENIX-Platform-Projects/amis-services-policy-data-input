@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AMIS - Data Entry tool</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FENIX Panel - Administration">
+    <meta name="author" content="Daniele Salvatore <daniele.salvatore[at]fao.org>">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/lib/bootstrap.css">
+    <!-- AMIS-->
+    <link rel="stylesheet" href="css/amis_styling.css">
+    <!-- JQwidgets  -->
+    <link rel="stylesheet" href='http://fenixapps.fao.org/repository/js/jqwidgets/3.2.2/styles/jqx.base.css'/>
+    <!-- nprogress js-->
+    <link rel="stylesheet" href="css/lib/nprogress.css">
+
+    <!-- Google Font-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+
+    <!-- Feedback
+    <link type="text/css" rel="stylesheet"
+          href="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7">
+    <link type="text/css" rel="stylesheet"
+          href="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5">
+    <link type="text/css" rel="stylesheet"
+          href="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/jquery.fancybox.css?v=2.1.4">
+       -->
+</head>
+<body>
+
+<!-- Sign in modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">FENIX Login in</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-signin">
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    <input id="modal-mail" type="email" autofocus="" required="" placeholder="Email address"
+                           class="form-control">
+                    <input type="password" required="" placeholder="Password" class="form-control">
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="sign-in-btn" type="submit" class="btn btn-lg btn-default btn-block">Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Header-->
+<div class="container amis-header">
+    <div class="amis-tag pull-left"></div>
+
+    <div class="pull-right banner-links"><a href="#" target='_self'> Send by email </a> | <a href="#"
+                                                                                             target='_self'>Print
+        this page</a></div>
+</div>
+
+<!-- Top menu-->
+<div class="container amis-menu">
+    <!-- Main menu-->
+    <nav class="navbar navbar-left">
+        <ul class="nav navbar-nav">
+            <li><a href="http://www.amis-outlook.org/home/en/" target='_self'>AMIS HOME</a></li>
+            <li><a href='../policy/index.html' target='_self'>POLICY HOME</a></li>
+            <li><a href='../policy/policiesAtaGlance.html' target='_self'>POLICIES AT A GLANCE</a></li>
+            <li><a href='../policy/queryAndDownload.html' target='_self'>QUERY AND DOWNLOAD</a></li>
+            <li><a href='../policy/analysis.html' target='_self'>ANALYSES</a></li>
+            <li><a href='../policy/statisticalNotes.html' target='_self'>STATISTICAL NOTES</a></li>
+            <li class="dropdown protected">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DATA ENTRY <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../policy-management#cpls">CPL</a></li>
+                    <li><a href="../policy-management#policies">Policy</a></li>
+                    <li><a href="../policy-management#commodities">Commodity</a></li>
+                    <li><a href="../policy-management#sharedgroups">Shared Group</a></li>
+                </ul>
+            </li>
+            <li data-toggle="modal" data-target="#signInModal"><a class="amis-log-btn">Login</a></li>
+
+        </ul>
+    </nav>
+</div>
+
+<!-- Page Content-->
+<div class="container">
+
+    <!-- Page content -->
+    <div class="row">
+
+        <div id="main" class="col-lg-12">
+            <div id="content"></div>
+        </div>
+
+    </div>
+
+    <!--Footer -->
+    <div class="row amis-footer">
+        <div class="col-xs-2 amis-footer-sides">
+            <a href='#' class='amis-contact-us'>CONTACT US</a>
+        </div>
+        <div class="col-xs-8 amis-footer-menu">
+            <a class="amis-footer-menu" href="http://www.amis-outlook.org/home/en/" target='_self'>AMIS HOME</a> | <a
+                class="amis-footer-menu" href='../policy/index.html' target='_self'>POLICY HOME</a> | <a
+                class="amis-footer-menu" href='../policy/policiesAtaGlance.html' target='_self'>POLICIES AT A GLANCE</a>
+            | <a class="amis-footer-menu" href='../policy/queryAndDownload.html' target='_self'>QUERY AND DOWNLOAD</a> |
+            <a class="amis-footer-menu" href='../policy/analysis.html' target='_self'>ANALYSES</a> | <a
+                class="amis-footer-menu" href='../policy/statisticalNotes.html' target='_self'>STATISTICAL NOTES</a>
+        </div>
+
+        <div class="col-xs-2 amis-footer-sides">
+            <div id="faostat-feedback-system" class="feedback-system-icon" data-fancybox-type="iframe"
+                 href="http://statistics.amis-outlook.org/otherssites/feedbackAmis" target="myFanzy">
+                <p style="font-style: italic; font-size: 9px;"> Help us with your</p>
+
+                <p style="font: 900 19px/16px 'Open Sans Condensed',sans-serif;"> FEEDBACK </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- =====================
+        Javascript
+=======================-->
+<script data-main="src/main" src="src/lib/require.js"></script>
+
+<!-- -->
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type='text/javascript'
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/jquery.fancybox.js?v=2.1.4"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/jquery.fancybox.css?v=2.1.4"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script type="text/javascript"
+        src="http://faostat3.fao.org/faostat-download-js/js/fanzybox/source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+              -->
+</body>
+</html>
