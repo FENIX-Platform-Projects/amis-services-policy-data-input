@@ -18,9 +18,9 @@
         <!-- J2EE -->
         <dependency>
             <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-            <scope>compile</scope>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Test -->
@@ -45,12 +45,12 @@
             <version>9.1-901.jdbc4</version>
         </dependency>
 
-        <!-- Cross domain support -->
+        <!-- Cross domain support
         <dependency>
             <groupId>org.fao.fenix</groupId>
             <artifactId>fenix-cross-domain</artifactId>
-            <version>1.0</version>
-        </dependency>
+            <version>1.1</version>
+        </dependency>-->
 
     </dependencies>
 
@@ -59,7 +59,7 @@
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                    <warName>policy</warName>
+                    <warName>policyinput</warName>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
                     </archive>
